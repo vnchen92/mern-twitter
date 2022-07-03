@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 
 const MainPage = props => {
     return (
@@ -11,4 +11,4 @@ const MainPage = props => {
     )
 }
 
-export default MainPage
+export default MainPage;

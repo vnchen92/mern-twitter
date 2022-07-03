@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { logout } from './actions/session_actions';
+import axios from 'axios';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -29,5 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const root = document.getElementById('root');
+
+    window.axios = axios;
     ReactDOM.render(<Root store={store} />, root)
 })

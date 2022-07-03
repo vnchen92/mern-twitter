@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { 
     RECEIVE_USER_LOGOUT, 
     RECEIVE_CURRENT_USER, 
@@ -9,7 +11,7 @@ const initialState = {
     user: {}
 }
 
-export default sessionReducer = (state = initialState, action) => {
+const sessionReducer = (state = initialState, action) => {
     switch(action.type) {
         case RECEIVE_USER_LOGOUT:
             return {
@@ -32,3 +34,5 @@ export default sessionReducer = (state = initialState, action) => {
     }
 
 }
+
+export default sessionReducer;

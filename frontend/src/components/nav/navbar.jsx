@@ -32,4 +32,4 @@ const NavBar = ({loggedIn, logout}) => {
     )
 }
 
-export default NavBar;t 
+export default NavBar;
