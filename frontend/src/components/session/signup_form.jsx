@@ -1,5 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+
+// const SignupForm = ({signedIn, errors, signup, login}) => {
+//   const [state, setState] = useState({email: "", handle: "", password: "", password2: "", errors: errors})
+
+//   // useEffect(() => {
+//   //   setState({...state, errors: errors})
+//   // }, [errors])
+
+//   const update = feild => {
+//     return e => {
+//       setState({...state, [feild]: e.target.value })
+//     }
+//   }
+
+//   const history = useHistory();
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     //debugger
+//     signup({...state});
+//     //debugger
+//     if (state.errors.length === 0) {
+//       login({email: state.email, password: state.password, errors: errors})
+//       history.push('./tweets');
+//     }
+//   }
+
+//   const renderErrors = () => {
+//     return(
+//       <ul>
+//         {Object.keys(errors).map((error, i) => (
+//           <li key={`error-${i}`}>
+//             {errors[error]}
+//           </li>
+//         ))}
+//       </ul>
+//     );
+//   }
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <label>Handle</label>
+//         <input type="text" value={state.handle} onChange={update('handle')} />
+//         <label>Email</label>
+//         <input type="text" value={state.email} onChange={update('email')} />
+//         <label>Password</label>
+//         <input type="password" value={state.password} onChange={update('password')} />
+//         <label>Confirm your password</label>
+//         <input type="password" value={state.password2} onChange={update('password2')} />
+//         <button>Sign Up</button>
+//         {renderErrors}
+//       </form>
+//     </div>
+//   )
+// }
+
+// export default SignupForm;
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -17,8 +76,8 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+    if (nextProps.isAuthenticated === true) {
+      this.props.history.push('/tweets');
     }
 
     this.setState({errors: nextProps.errors})
