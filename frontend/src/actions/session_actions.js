@@ -50,12 +50,6 @@ export const signup = user => dispatch => (
         dispatch(receiveSessionErrors(err.response.data));
     })
 )
-    // APIUtil.signup(user).then(() => (
-//         dispatch(receiveUserSignIn())
-//     ), err => (
-//         dispatch(receiveSessionErrors(err.response.data))
-//     ))
-// );
 
 export const login = user => dispatch => (
     APIUtil.login(user).then(res => {
